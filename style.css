@@ -1,0 +1,42 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: linear-gradient(180deg, teal, green);
+}
+
+.grid {
+  height: 100vh;
+  width: 100vw;
+  display: grid;
+  grid-template-areas: "sidebar header header header"
+    "sidebar main main main"
+    "sidebar main main main"
+    "sidebar main main main";
+  grid-template-rows: 2fr repeat(3, 3fr);
+  grid-template-columns: 2fr repeat(2, 3fr) 2fr;
+  gap: 15px;
+  padding: 10px;
+}
+
+.grid:nth-child(n) {
+  opacity: 0.3;
+}
+
+.main-content {
+  grid-area: main;
+  background-color: gainsboro;
+}
+
+.sidebar {
+  grid-area: sidebar;
+  background-color: rgb(51, 194, 111);
+}
+
+.header {
+  grid-area: header;
+  background-color: rgb(158, 233, 164);
+}
